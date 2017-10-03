@@ -1,0 +1,248 @@
+/* 
+ * Selecter v3.2.3 - 2014-10-24 
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
+ * http://formstone.it/selecter/ 
+ * 
+ * Copyright 2014 Ben Plum; MIT Licensed 
+ */
+
+
+.selecter {
+  position: relative;
+  display: block;
+  /*margin: 10px 0;*/
+  z-index: 1;
+  /*max-width: 30%;*/
+
+}
+.selecter:focus {
+  box-shadow: none;
+  outline: none;
+}
+.selecter,
+.selecter * {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+}
+.selecter,
+.selecter *,
+.selecter *:before,
+.selecter *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+.selecter-element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+.selecter-element,
+.selecter-element:focus {
+  outline: none;
+}
+.no-opacity .selecter-element {
+  left: -999999px;
+}
+.selecter-selected {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: clip;
+  z-index: 2;
+  width: 80px;
+  height: 44px;
+  border: 1px solid #9dbeb5;
+  border-radius: 20px;
+  color: #9dbeb5;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+  padding: 7px 14px 4px 40px;
+  box-sizing: border-box;
+}
+.selecter-selected:after {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  bottom: 0;
+  border-right: 1px solid #9dbeb5;
+  border-bottom: 1px solid #9dbeb5;
+  transform:rotate(45deg);
+  content: '';
+  display: block;
+  margin: auto 0;
+}
+.no-touch .selecter-selected:hover {
+  color: #4bb5f1;
+}
+.no-touch .selecter.disabled .selecter-selected:hover {
+  color: #4bb5f1;
+}
+.selecter-options {
+  width: 100%;
+  max-height: 260px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #cccccc;
+  border-width: 0 1px 1px;
+  display: none;
+  margin: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0;
+  z-index: 50;
+  border-radius: 0 0 20px 20px;
+}
+.selecter-options.scroller {
+  position: absolute;
+}
+.no-opacity .selecter-options {
+  width: auto;
+}
+.selecter-group {
+  color: #9dbeb5;
+  display: block;
+  font-size: 11px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.selecter-item {
+  width: 100%;
+  color: #9dbeb5;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin: 0;
+  overflow: hidden;
+  padding: 6px 14px 6px 40px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+.selecter-item.placeholder {
+  display: none;
+}
+.selecter-item.selected {
+}
+.selecter-item.disabled {
+  color: #999999;
+  cursor: default;
+}
+.selecter-item:first-child {
+  border-radius: 0;
+}
+.selecter-item:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 2px 2px;
+}
+.no-touch .selecter-item:hover,
+.no-touch .selecter-item.selected:hover {
+  color: #4bb5f1;
+}
+.selecter-item.disabled,
+.no-touch .selecter-item.disabled:hover {
+  color: #4bb5f1;
+}
+.selecter.open {
+  z-index: 3;
+}
+.selecter.open .selecter-selected {
+  z-index: 51;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid transparent;
+}
+.selecter.open .selecter-selected,
+.selecter.focus .selecter-selected {
+}
+.selecter.cover .selecter-options {
+  border-width: 1px;
+  top: 0;
+  border-radius: 3px;
+}
+.selecter.cover .selecter-options .selecter-item.first {
+  border-radius: 3px 3px 0 0;
+}
+.selecter.cover.open .selecter-selected {
+  z-index: 49;
+  border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .selecter-options {
+  top: auto;
+  bottom: 100%;
+  border-width: 1px 1px 0;
+}
+.selecter.bottom .selecter-item:last-child {
+  border: none;
+}
+.selecter.bottom.open .selecter-selected {
+  border-radius: 0 0 3px 3px;
+}
+.selecter.bottom.open .selecter-options {
+  border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .cover .selecter-options {
+  top: auto;
+  bottom: 0;
+}
+.selecter.bottom .cover.open .selecter-selected {
+  border-radius: 3px;
+}
+.selecter.bottom .cover.open .selecter-options {
+  border-radius: 3px;
+}
+.selecter.multiple .selecter-options {
+  width: 100%;
+  position: static;
+  border-width: 1px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.selecter.disabled .selecter-selected {
+  border-color: #9dbeb5;
+  color: #9dbeb5;
+  cursor: default;
+}
+.selecter.disabled .selecter-options {
+  border-color: #9dbeb5;
+}
+.selecter.disabled .selecter-group,
+.selecter.disabled .selecter-item {
+  border-color: #9dbeb5;
+  color: #9dbeb5;
+  cursor: default;
+}
+.selecter.disabled .selecter-item.selected,
+.no-touch .selecter.disabled .selecter-item.selected:hover {
+
+}
+.selecter.disabled .selecter-item,
+.no-touch .selecter.disabled .selecter-item:hover {
+  color: #4bb5f1;
+}
+.selecter-options.scroller {
+  overflow: hidden;
+}
+.selecter-options.scroller .scroller-content {
+  max-height: 260px;
+  padding: 0;
+}
+@media screen and (max-width: 740px) {
+  .selecter {
+    /*max-width: 40%;*/
+  }
+}
+@media screen and (max-width: 500px) {
+  .selecter {
+    /*max-width: 100%;*/
+  }
+}

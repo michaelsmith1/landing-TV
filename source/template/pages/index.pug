@@ -1,0 +1,401 @@
+extends ../_template
+
+block variables
+  - var title = 'Фильмы - BigFilm.tv'
+
+block content
+  .wrapper
+    .header.section(data-section='one')
+      .header__top
+        .container
+          .row.header__menu.align-items-center
+            .col-12.justify-content-center.col-sm-6.justify-content-sm-center.justify-content-lg-start.col-lg-2.logo.order-lg-1.wow.fadeInLeft
+              a.logo-link(href='/')
+                img(src='assets/img/logo.png' alt='logo').logo__img
+            .col-12.col-sm-12.col-lg-7.order-1.order-lg-2.justify-content-center.justify-content-lg-start.wow.fadeIn(data-wow-delay=".3s")
+              nav.nav
+                ul.nav-list.justify-content-sm-center
+                  li.nav-list__item
+                    a(href='https://bigfilm.tv/tv/').nav-list__item__link ТВ
+                  li.nav-list__item
+                    a(href='https://bigfilm.tv/movies/').nav-list__item__link фильмы
+                  li.nav-list__item
+                    a(href='https://bigfilm.tv/movies/?genre=18').nav-list__item__link сериалы
+                  li.nav-list__item
+                    a(href='https://bigfilm.tv/movies/?genre=15').nav-list__item__link мультфильмы
+                  li.nav-list__item
+                    a(href='https://bigfilm.tv/movies/?genre=19').nav-list__item__link передачи и шоу
+            .col-12.col-sm-6.col-lg-3.signed-form.justify-content-center.justify-content-sm-center.justify-content-lg-end.order-lg-3.wow.fadeInRight(data-wow-delay="0.6s")
+              .sign
+                a(href='https://bigfilm.tv/login/').btn-link.btn-link_login.sign__link Вход
+              form.lang
+                select.lang__select(name='lang')
+                  option RU
+        .container.header__slider
+          .slider
+            .slider__item
+              .slide
+                .slide__text
+                  h1.h1.h1-slider НОВЫЙ И УДОБНЫЙ СПОСОБ <br>СМОТРЕТЬ ТЕЛЕВИДЕНИЕ В КИТАЕ
+                  .slide__info
+                    | Поддерживайте связь со страной, в которой вы выросли, и помогайте вашим детям не забывать родной язык вместе с нашим сервисом
+            .slider__item
+              .slide
+                .slide__text
+                  h1.h1.h1-slider ЧАСТИЧКА РОДИНЫ В КИТАЕ!
+                  .slide__info
+                    | Русское ТВ в Вашем доме и на мобильных устройствах. Теперь это проще простого!
+          a(href='https://bigfilm.tv/login/').btn-link.slider-link.wow.fadeInUp(data-wow-delay="1.2s") Зарегистрироваться
+          .qr
+            img(src='assets/img/qr.png').qr-img
+      .channels
+        .container
+          .row.justify-content-center.wow.fadeIn(data-wow-delay="0.3s")
+            a(href='#').menu-mobile
+              span Каналы
+              .burger
+                .burger-top
+                .burger-center
+                .burger-bottom
+            ul.channels-list
+              li.channels-list__item
+                a(href='#').channels-list__item__link Общие
+                ul.sub-list
+                  -var items = [ "Первый Канал", "Россия 1", "НТВ", "Пятый Канал", "Культура", "Россия 24", "ОТР", "РЕН ТВ", "СТС", "ТВ-3", "Пятница", "Звезда", "ТНТ", "TV 8", "Подмосковье", "РТР Планета", "Москва 24"];
+                  each item in items
+                    li.sub-list__item= item
+              li.channels-list__item
+                a(href='#').channels-list__item__link Детские
+                ul.sub-list
+                  li.sub-list__item
+                    | Карусель
+                  li.sub-list__item
+                    | Disney Channel
+                  li.sub-list__item
+                    | Nickelodeon
+                  li.sub-list__item
+                    | Nick Jr.
+                  li.sub-list__item
+                    | Guli
+                  li.sub-list__item
+                    | Tiji
+                  li.sub-list__item
+                    | JimJam
+                  li.sub-list__item
+                    | Cartoon Network
+                  li.sub-list__item
+                    | Mult
+                  li.sub-list__item
+                    | Enikibeniki
+              li.channels-list__item
+                a(href='#').channels-list__item__link Новостные
+                ul.sub-list
+                  li.sub-list__item
+                    | Россия 24
+                  li.sub-list__item
+                    | МИР
+                  li.sub-list__item
+                    | Euronews
+                  li.sub-list__item
+                    | РБК-ТВ
+                  li.sub-list__item
+                    | Russia Today
+                  li.sub-list__item
+                    | Russia Today Док.
+                  li.sub-list__item
+                    | Москва 24
+                  li.sub-list__item
+                    | Lifenews
+                  li.sub-list__item
+                    | RTVi
+                  li.sub-list__item
+                    | 1TV
+                  li.sub-list__item
+                    | Rustavi2
+                  li.sub-list__item
+                    | Adjara
+                  li.sub-list__item
+                    | BBC World News
+                  li.sub-list__item
+                    | Aljazeera
+                  li.sub-list__item
+                    | France 24
+                  li.sub-list__item
+                    | Deutsche Welle
+                  li.sub-list__item
+                    | TV Oberfranken 1
+                  li.sub-list__item
+                    | Bloomberg
+                  li.sub-list__item
+                    | CNN
+                  li.sub-list__item
+                    | CBS News
+                  li.sub-list__item
+                    | ABC News
+                  li.sub-list__item
+                    | TWC
+                  li.sub-list__item
+                    | CBN News
+                  li.sub-list__item
+                    | FOX 23
+                  li.sub-list__item
+                    | FOX 25
+                  li.sub-list__item
+                    | FOX 30
+                  li.sub-list__item
+                    | MSNBC
+              li.channels-list__item
+                a(href='#').channels-list__item__link Познавательные
+                ul.sub-list
+                  - var items = [ "Пятница", "365 Дней", "Animal Planet", "Discovery Chanel", "DTX", "Discovery ID", "National Geographic", "National Geo Wild", "Viasat Explorer", "Viasat History", "Viasat Nature", "Travel Channel", "История ТВ", "Охота и Рыбалка", "Кухня ТВ"];
+                  each item in items
+                    li.sub-list__item= item
+              li.channels-list__item
+                a(href='#').channels-list__item__link кино
+                ul.sub-list
+                  - var items = [ "Домашний", "Пятница", "TV XXI (TV 21)", "Мужское кино", "Sony Sci-fi", "Русский Иллюзион", "Sony Turbo", "Bollywood", "Комедия ТВ", "Индийское кино", "ТВ1000 Русское кино", "TV1000", "TV1000 Action", "Наше кино", "НСТ", "TV1000 Comedy HD", "Наше новое кино", "TV1000 Megahit HD", "Fox Life", "TV1000 Premium HD", "Киномикс", "Дом кино премиум HD", "Дом кино", "Кинохит", "FOX", "Paramount Comedy", "Еврокино", "AMС", "MGM HD", "Русский Бестселлер", "Русский Роман"];
+                    each item in items
+                      li.sub-list__item= item
+              li.channels-list__item
+                a(href='#').channels-list__item__link музыкальные
+                ul.sub-list
+                  - var items = ["Муз-ТВ", "World Fashion", "Bridge TV", "MTV", "MTV Dance", "Ю TV", "Ля-минор ТВ", "Rusong TV", "Mezzo HD", "RU.TV", "25", "Dream TV" ];
+                    each item in items
+                      li.sub-list__item= item
+
+              li.channels-list__item
+                a(href='#').channels-list__item__link спортивные
+                ul.sub-list
+                  - var items = ["Матч ТВ","Матч! Футбол1 HD","Матч! Футбол2 HD","Матч! Футбол3 HD","Авто 24","Viasat Sport","Авто Плюс","МАТЧ! БОЕЦ","Viasat Sport HD","Матч! Футбол1","Матч! Наш спорт","Наш Футбол","Матч! HD","EuroSport 2 HD","EuroSport 1","КХЛ-ТВ","Матч! Футбол2","Матч! Арена","SKY Main Event HD","SKY Cricket HD","SKY Action HD","SKY Golf HD","SKY Premier League HD","ESPN","Матч! Футбол3","Конный мир HD","Bein LaLiga","M. Deportes 1","M. Deportes 2"];
+                    each item in items
+                      li.sub-list__item= item
+
+    main.main
+      section.section.section-favorites(data-section='two')
+        .container
+          .row
+            .col-12.col-md-4
+              .favorite.wow.slideInUp(data-wow-delay=".2s")
+                .favorite__icon.wow.rotateIn(data-wow-delay=".2s")
+                  img.favorite-icon(src='assets/img/play.png')
+                .favorite__info
+                  .favorite__head 285 КАНАЛОВ
+                  .favorite__text Это в 2 раза больше,
+                    | чем у наших конкурентов
+            .col-12.col-md-4
+              .favorite.wow.fadeIn
+                .favorite__icon.wow.rotateIn
+                  img.favorite-icon(src='assets/img/server.png')
+                .favorite__info
+                  .favorite__head ИДЕАЛЬНОЕ КАЧЕСТВО ВЕЩАНИЯ
+                  .favorite__text Наши серверы находятся &nbsp;
+                    | в Гонконге и Сингапуре
+            .col-12.col-md-4
+              .favorite.wow.slideInUp(data-wow-delay=".2s")
+                .favorite__icon.wow.rotateIn(data-wow-delay=".2s")
+                  img.favorite-icon(src='assets/img/film-strip.png')
+                .favorite__info
+                  .favorite__head Поддержка в WeChat
+                  .favorite__text На все вопросы отвечает русскоязычный специалист
+          .row.archive-total
+            .col-12.col-lg-8.archive-total__item
+              img.archive-img(src='assets/img/arch.jpg')
+            .col-12.col-lg-5.archive-total__item.archive-total__item_2
+              .archive
+                .archive__head.archive__head_border
+                  .title.archive__title.wow.fadeIn(data-wow-delay=".4s") ДВУХНЕДЕЛЬНЫЙ АРХИВ ДЛЯ ТЕЛЕКАНАЛОВ
+                .archive__icon.wow.rotateIn
+                  img.archive-icon(src='assets/img/popcorn.png')
+                .archive__text.wow.fadeInLeft(data-wow-delay=".4s")
+                  .text Помимо прямого вещания, имеется 2-х недельный архив для большинства телеканалов.<br>
+                    | Теперь нет необходимости строго планировать свой день, чтобы успеть к началу любимой телепередачи или фильма.
+          .row.archive-total
+            .col-12.col-lg-8.archive-total__item
+              .archive
+                .archive__icon.archive__icon_mod.wow.rotateIn
+                  img.archive-icon(src='assets/img/devices.png')
+                .archive_border
+                  .archive__head.wow.fadeIn(data-wow-delay=".2s")
+                    .title.archive__title.archive__title_mod ВОЗМОЖНОСТЬ ПАРАЛЛЕЛЬНОГО ПРОСМОТРА С ТРЕХ УСТРОЙСТВ
+                  .archive__text.wow.fadeInRight(data-wow-delay=".4s")
+                    .text.taj Смотрите любимые передачи параллельно на трех устройствах, находящихся в одной локальной сети.
+                      | <br>Поскольку интересы членов семьи могут и не пересекаться, один может смотреть футбол на iPad, второй - любимый сериал на телевизоре, а третий - мультфильм на телефоне.
+            .col-12.col-lg-5.archive-total__item.archive-total__item_2.wow.slideInRight
+              img.archive-img(src='assets/img/android1.png')
+        .action
+          .container
+            .row.action__row.align-items-center.justify-content-between
+              .col-12.col-md-8
+                .action__text.wow.fadeIn
+                  img.action-unlock-img(src='assets/img/unlocked.png')
+                  p Зарегистрируйтесь прямо сейчас и получите 2 дня бесплатного пробного просмотра на нашем сайте!
+              .col-12.col-md-4
+                a(href='https://bigfilm.tv/login/').btn-link.btn-link_red.action__link.wow.fadeIn(data-wow-delay=".2s") Зарегистрироваться
+      section.section.section-android(data-section='tree')
+        .container
+          .row.archive-total.mb0.mh500
+            .col-md-7.archive-total__item.mt65
+              .archive.archive_bl
+                .archive__icon.archive__icon_mod.wow.rotateIn
+                  img.archive-icon(src='assets/img/android-icon.png')
+                .archive__link
+                  a(href='https://taobao.com').btn-link.btn-link_red.console__link Оформить заказ!
+                .archive_border_mod
+                  .archive__head.wow.fadeIn(data-wow-delay=".2s")
+                    .title.archive__title.archive__title_mod android-приставка
+                  .archive__text.wow.fadeInRight(data-wow-delay=".4s")
+                    .text.taj.mb60 Есть возможность использования android-приставок для TV от других провайдеров online-TV. Если у вас нет android-приставки, закажите её прямо сейчас!
+            .col-md-5.archive-total__item.img-center.wow.tada(data-wow-iteration= 2)
+              img(src='assets/img/box.png').android-img
+      section.section.section-price(data-section='four')
+        .container
+          .row.price
+            .col-12.col-sm-6
+              .title.wow.fadeIn ЦЕНЫ И ВИДЫ ПОДПИСОК
+            .col-12.col-sm-6
+              .price__offer.wow.fadeIn Все цены на 30% ниже, чем у конкурентов!
+              .price__pay-info.wow.fadeIn(data-wow-delay=".2s")
+                .div Оплачивайте с помощью WeChat!
+                .div
+                  img.img-wechat(src='assets/img/wechat.png')
+          .row.price__show.justify-content-around
+            .col-12.col-sm-4.mb90.wow.slideInLeft
+              .price__show__item
+                .item__name НА МЕСЯЦ
+                .item__desc 30 дневная подписка
+                .item__price $16
+                a(href='https://bigfilm.tv/login/').btn-link.btn-link_praice.item__link Зарегистрироваться и Оплатить
+            .col-12.col-sm-4.mb90.wow.fadeIn(data-wow-delay=".6s")
+              .price__show__item
+                .item__name НА полгода
+                .item__desc Экономь 10 долларов
+                .item__price $86
+                a(href='https://bigfilm.tv/login/').btn-link.btn-link_praice.item__link Зарегистрироваться и Оплатить
+            .col-12.col-sm-4.mb90.wow.slideInRight
+              .price__show__item
+                .item__name НА ГОД
+                .item__desc Экономь 47 долларов
+                .item__price $145
+                a(href='https://bigfilm.tv/login/').btn-link.btn-link_praice.item__link Зарегистрироваться и Оплатить
+
+    footer.footer
+      .container
+        .row.footer-menu.wow.slideInUp
+          .col-12.col-sm-4.col-lg-2
+            .f-menu__name Показываем:
+            ul.f-menu__list
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/movies/films/').f-menu__list__item__link Кино
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/movies/series/').f-menu__list__item__link Сериалы
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/movies/shows/').f-menu__list__item__link Передачи шоу
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/movies/mults/').f-menu__list__item__link Мультфильмы
+          .col-12.col-sm-4.col-lg-2
+            .f-menu__name Пользователям:
+            ul.f-menu__list
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/termsofUse/').f-menu__list__item__link Пользовательское соглашение
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/faq/').f-menu__list__item__link Часто задаваемые вопросы
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/plugins/speedtest/').f-menu__list__item__link Проверить скорость
+          .col-12.col-sm-4.col-lg-3
+            .f-menu__name О нас:
+            ul.f-menu__list
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/page?p=about').f-menu__list__item__link О проекте
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/contacts/').f-menu__list__item__link Поддержка
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/partners/').f-menu__list__item__link Партнерская программа
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/holder/').f-menu__list__item__link Правообладателям
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/privacypolicy/').f-menu__list__item__link Политика конфидинциальности
+              li.f-menu__list__item
+                a(href='https://bigfilm.tv/about/advertising/').f-menu__list__item__link Размещение рекламы
+          .ccl-12.col-sm-12.col-lg-5
+            .f-menu__name Мы в устройствах:
+            .row.devices
+              ul.col-12.col-sm-6.f-menu__list
+                li.f-menu__list__item
+                  a(href='https://bigfilm.tv/files/apk/BigFilm.TV1.14Beta8.apk').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/1.png')
+                    span
+                      | Приложение в
+                      | Google Play
+                li.f-menu__list__item
+                  a(href='https://itunes.apple.com/us/app/bigfilm/id747709002?l=ru&ls=1&mt=8').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/2.png')
+                    span
+                      | Приложение в
+                      | App Store
+                li.f-menu__list__item
+                  a(href='https://itunes.apple.com/us/app/bigfilm-tv/id747709002?l=ru&ls=1&mt=8').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/3.png')
+                    span
+                      | Приложение в
+                      | TV App Store
+                li.f-menu__list__item
+                  a(href='https://itunes.apple.com/us/app/bigfilm/id943135438?mt=12').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/4.png')
+                    span
+                      | Приложение в
+                      | Mac OS
+              ul.col-12.col-sm-6.f-menu__list
+                li.f-menu__list__item
+                  a(href='https://bigfilm.tv/dune_plugin.zip').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/5.png')
+                    span
+                      | Приложение в
+                      | Dune HD
+                li.f-menu__list__item
+                  a(href='https://bigfilm.tv/smarttv').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/6.png')
+                    span
+                      | Приложение в
+                      | Smart TV
+                li.f-menu__list__item
+                  a(href='#' onclick="return false;").f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/7.png')
+                    span
+                      | Приложение в
+                      | Enigma2
+                li.f-menu__list__item
+                  a(href='https://bigfilm.tv/mag').f-menu__list__item__link
+                    .f-img-cont
+                      img.app-icon(src='assets/img/app/8.png')
+                    span
+                      | Приложение в
+                      | Mag/Aura HD
+
+      .footer-copy.wow.slideInUp
+        .container
+          .row
+            .col-md-3.justify-content-center.justify-content-sm-start
+              .f-logo
+                img(src='assets/img/logo.png' alt='logo').f-logo__img
+            .col-md-9
+              .text.copy BigFilm.tv — первый видеосервис с лицензионным полнометражным контентом. У нас вы сможете смотреть ТВ и фильмы онлайн. Вам не нужно искать свежие версии кодеков и устанавливать разнообразные видеоплееры!<br>
+                | Все, что вам нужно - это подключение к сети интернет!<br> <br>
+                | Смотрите фильмы без вирусов и без отправки смс. Смотрите фильмы онлайн в удобное время с высоким качеством. При этом Вы сами можете выбрать, в каком качестве хотите смотреть фильмы. Приятного просмотра!
+    .one-page-nav
+      .one-page-nav__item.active
+        a.one-page-nav__item__link(href='#one')
+      .one-page-nav__item
+        a.one-page-nav__item__link(href='#two')
+      .one-page-nav__item
+        a.one-page-nav__item__link(href='#tree')
+      .one-page-nav__item
+        a.one-page-nav__item__link(href='#four')
+    .up
+      .up__link

@@ -1,0 +1,16 @@
+// Config
+@import "config/_variables";
+@import "config/_mixins";
+//@import "config/sprite";
+
+// Base
+@import "base/_base";
+
+// Layout
+@import "layout/_header";
+@import "layout/_footer";
+// Components
+@import "fonts/_fonts";
+
+// Pages
+@import "pages/_index";

@@ -1,0 +1,35 @@
+block variables
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title #{title}
+    meta(content="" name="author")
+    meta(content="" name="description")
+    meta(content="" name="keywords")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+    //- favicon block start
+    //- favicon block end
+
+    link(rel="stylesheet" href="/assets/css/foundation%=suffix=%.css%=version=%")
+    link(rel="stylesheet" href="/assets/libs/slick-slider/slick.css")
+    link(rel="stylesheet" href="/assets/libs/select/jquery.fs.selecter.css")
+    link(rel="stylesheet" href="/assets/libs/animate/animate.css")
+    link(rel="stylesheet" href="/assets/css/app%=suffix=%.css%=version=%")
+    script(src="/assets/js/foundation%=suffix=%.js%=version=%" defer)
+    script(src="/assets/libs/slick-slider/slick.min.js" defer)
+    script(src="/assets/libs/animate/wow.min.js" defer)
+    script(src="/assets/libs/select/modernizr.js" defer)
+    script(src="/assets/libs/select/jquery.fs.selecter.min.js" defer)
+    script(src="/assets/js/app%=suffix=%.js%=version=%" defer)
+
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js")
+    <![endif]-->
+
+  body
+    block content
